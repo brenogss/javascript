@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em qual país você mora?</title>
+    <style>
+        body {
+            font: normal 1.2rem Arial
+        }
+        Input {
+            font: normal 1rem Arial;
+            width: 100px;
+            
+        }
+        #res {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Em qual país você mora?</h1>
+    Qual o seu país? <input type="text" name="país" id="país">
+    <input type="button" value="confirmar" onclick="confirmar()">
+    <div id=res>
+
+    </div>
+    <script>
+        function confirmar() {
+            var p = window.document.getElementById('país').value
+            var res = window.document.getElementById('res')
+            res.innerHTML += `<p>Vivendo em <strong>${p}</strong></p>`
+            if(p == 'Brasil'){
+                res.innerHTML += '<p>Você é <strong>brasileiro</strong></p>'
+            }else {
+                res.innerHTML += '<p>Você é <strong>estrangeiro</strong></p>'
+            }
+            
+        }
+    </script>
+</body>
+</html>
